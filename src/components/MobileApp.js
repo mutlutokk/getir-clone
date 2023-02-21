@@ -27,6 +27,7 @@ export default function MobileApp() {
         </div>
         <div className="flex items-end">
           <img
+            className="rounded-br-lg"
             src="https://cdn.getir.com/getirweb-images/common/landing/phoneLanding.png"
             alt=""
           />
