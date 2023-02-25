@@ -13,6 +13,7 @@ module.exports = {
         "brand-yellow": "#ffd300",
         "brand-gray": "#f3f0fe",
         "brand-primary-gray": "#626262",
+        "secondary-brand-gray": "#697488",
       },
     },
   },

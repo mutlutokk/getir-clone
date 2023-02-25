@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "title": "Getir'i keşfedin",
+        "title1": "Hakkımızda",
+        "title2": "Kariyer",
+        "title3": "Teknoloji Kariyerleri",
+        "title4": "İletişim",
+        "title5" : "Sosyal Sorumluk Projeleri"
+    },
+    {
+        "id":2,
+        "title": "Yardıma mı ihtiyacınız var?",
+        "title1": "Sıkça Sorulan Sorular",
+        "title2": "Kişisel Verilerin Korunması",
+        "title3": "Gizlilik Politikası",
+        "title4": "Kullanım Koşulları",
+        "title5" : "Çerez Politikası"
+    },
+    {
+        "id":3,
+        "title": "İş Ortağımız Olun",
+        "title1": "Bayimiz Olun",
+        "title2": "Deponuzu Kiralayın",
+        "title3": "GetirYemek Restoranı Olun",
+        "title4": "GetirÇarşı İşletmesi Olun",
+        "title5" : "Zincir Restoranlar"
+    }
+]
