@@ -15,7 +15,7 @@ export default function Categories() {
         <h3 className="text-sm font-semibold mb-3  text-brand-primary-gray">
           Kategoriler
         </h3>
-        <div className="grid grid-cols-10">
+        <div className="grid 2xl:grid-cols-12 xl:grid-cols-11 lg:grid-cols-10 md:grid-cols-4 sm:grid-cols-3 max-sm:grid-cols-3">
           {categories &&
             categories.map((category, index) => (
               <Category key={index} category={category} />

@@ -10,20 +10,34 @@ export default function MobileApp() {
           <p className="text-white max-w-sm mt-3 font-semibold">
             İstediğiniz ürünleri dakikalar içinde kapınıza getirelim.
           </p>
-          <a href="mobile-app" className="flex gap-2 mt-8">
+          <div href="mobile-app" className="flex gap-2 mt-8">
             <img
+              onClick={() => {
+                window.location.href = "https://apps.apple.com/app/id995280265";
+              }}
+              className="cursor-pointer"
               src="https://getir.com/_next/static/images/appstore-tr-141ed939fceebdcee96af608fa293b31.svg"
-              alt=""
+              alt="app store"
             />
             <img
+              onClick={() => {
+                window.location.href =
+                  "https://play.google.com/store/apps/details?id=com.getir&pli=1";
+              }}
+              className="cursor-pointer"
               src="https://getir.com/_next/static/images/googleplay-tr-6b0c941b7d1a65d781fb4b644498be75.svg"
-              alt=""
+              alt="google play"
             />
             <img
+              onClick={() => {
+                window.location.href =
+                  "https://appgallery.huawei.com/#/app/C100954039";
+              }}
+              className="cursor-pointer"
               src="https://getir.com/_next/static/images/huawei-appgallery-tr-4b890fa3167bc62f9069edaf45aa7f30.svg"
-              alt=""
+              alt="app gallery"
             />
-          </a>
+          </div>
         </div>
         <div className="flex items-end">
           <img
