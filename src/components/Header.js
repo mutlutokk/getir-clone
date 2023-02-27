@@ -5,9 +5,12 @@ import Login from "./Login";
 import Laguage from "./Laguage";
 import Register from "./Register";
 
-export default function Header() {
+export default function Header({
+  language,
+  handleClickLaguage,
+  handleClickLaguageFalse,
+}) {
   const [loginActive, setLoginActive] = useState(false);
-  const [language, setLanguage] = useState(false);
   const [register, setRegister] = useState(false);
 
   const handleClickLogin = (e) => {
@@ -19,18 +22,9 @@ export default function Header() {
     setLoginActive(false);
   };
 
-  const handleClickLaguage = (e) => {
-    setLanguage(true);
-    e.preventDefault();
-  };
-
-  const handleClickLaguageFalse = () => {
-    setLanguage(false);
-  };
-
   const handleClickRegister = (e) => {
-    setRegister(true);
     e.preventDefault();
+    setRegister(true);
   };
 
   const handleClickRegisterFalse = () => {
@@ -116,7 +110,10 @@ export default function Header() {
           onClick={handleClickLaguageFalse}
           className="fixed inset-0 flex justify-center items-center z-30 bg-black bg-opacity-60"
         >
-          <Laguage />
+          <Laguage
+            handleClickLaguageFalse={handleClickLaguageFalse}
+            handleClickLaguage={handleClickLaguage}
+          />
         </div>
       )}
       {loginActive && (
@@ -124,7 +121,10 @@ export default function Header() {
           className="fixed inset-0 flex justify-center items-center z-30 bg-black bg-opacity-60"
           onClick={handleClickLoginFalse}
         >
-          <Login />
+          <Login
+            handleClickRegister={handleClickRegister}
+            handleClickLoginFalse={handleClickLoginFalse}
+          />
         </div>
       )}
       {register && (
@@ -132,7 +132,10 @@ export default function Header() {
           className="fixed inset-0 flex justify-center items-center z-30 bg-black bg-opacity-60"
           onClick={handleClickRegisterFalse}
         >
-          <Register />
+          <Register
+            handleClickLogin={handleClickLogin}
+            handleClickRegisterFalse={handleClickRegisterFalse}
+          />
         </div>
       )}
     </>

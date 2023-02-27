@@ -2,8 +2,18 @@ import { useState } from "react";
 import ReactFlagsSelect from "react-flags-select";
 import { MdClose } from "react-icons/md";
 
-export default function Login() {
+export default function Login({ handleClickRegister, handleClickLoginFalse }) {
   const [selected, setSelected] = useState("TR");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    handleClickLoginFalse();
+    handleClickRegister(e);
+  };
+
+  const handleClickClose = () => {
+    handleClickLoginFalse();
+  };
 
   const phones = {
     TR: "+90",
@@ -15,12 +25,15 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div onClick={(e) => e.stopPropagation()}>
       <div className="w-[446px] h-[338px] rounded-lg bg-white relative">
         <h1 className="text-primary-brand-color text-base font-semibold text-center pt-9">
           Giriş yap veya kayıt ol
         </h1>
-        <button className="bg-brand-gray rounded-lg text-lg w-8 h-8 absolute top-8 right-8 flex justify-center items-center">
+        <button
+          onClick={handleClickClose}
+          className="bg-brand-gray rounded-lg text-lg w-8 h-8 absolute top-8 right-8 flex justify-center items-center"
+        >
           <MdClose />
         </button>
         <div className="flex gap-x-2 pt-9 pl-6 pr-6">
@@ -66,6 +79,7 @@ export default function Login() {
           Hala kayıt olmadınız mı?
           <div>
             <a
+              onClick={handleClick}
               className="pl-1 text-primary-brand-color  font-semibold"
               href="Kayıt Ol"
             >

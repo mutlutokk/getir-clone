@@ -4,16 +4,31 @@ import Categories from "./components/Categories";
 import MobileApp from "./components/MobileApp";
 import Cards from "./components/Cards";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+  const [language, setLanguage] = useState(false);
+
+  const handleClickLaguage = (e) => {
+    e.preventDefault();
+    setLanguage(true);
+  };
+
+  const handleClickLaguageFalse = () => {
+    setLanguage(false);
+  };
   return (
     <>
-      <Header />
+      <Header
+        language={language}
+        handleClickLaguage={handleClickLaguage}
+        handleClickLaguageFalse={handleClickLaguageFalse}
+      />
       <HeroSection />
       <Categories />
       <MobileApp />
       <Cards />
-      <Footer />
+      <Footer handleClickLaguage={handleClickLaguage} />
     </>
   );
 }

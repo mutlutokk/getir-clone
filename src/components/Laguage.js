@@ -1,12 +1,22 @@
 import { MdClose } from "react-icons/md";
 
-export default function Laguage() {
+export default function Laguage({ handleClickLaguageFalse }) {
+  const handleClickClose = () => {
+    handleClickLaguageFalse();
+  };
+
   return (
-    <div className="bg-white w-[446px] h-[299px] rounded-lg relative">
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="bg-white w-[446px] h-[299px] rounded-lg relative"
+    >
       <div className="text-primary-brand-color pt-9 flex justify-center text-sm font-semibold">
         Dil Değiştir
       </div>
-      <button className="bg-brand-gray rounded-lg text-lg w-8 h-8 absolute top-8 right-8 flex justify-center items-center">
+      <button
+        onClick={handleClickClose}
+        className="bg-brand-gray rounded-lg text-lg w-8 h-8 absolute top-8 right-8 flex justify-center items-center"
+      >
         <MdClose />
       </button>
       <div className="py-9 px-8">

@@ -2,8 +2,20 @@ import { useState } from "react";
 import { MdClose } from "react-icons/md";
 import ReactFlagsSelect from "react-flags-select";
 
-export default function Register() {
+export default function Register({
+  handleClickLogin,
+  handleClickRegisterFalse,
+}) {
   const [selected, setSelected] = useState("TR");
+
+  const handleClick = (e) => {
+    handleClickRegisterFalse();
+    handleClickLogin(e);
+  };
+
+  const handleClickClose = () => {
+    handleClickRegisterFalse();
+  };
 
   const phones = {
     TR: "+90",
@@ -15,8 +27,14 @@ export default function Register() {
   };
 
   return (
-    <div className="bg-white h-[569px] w-[446px] rounded-lg relative">
-      <button className="absolute right-8 top-8 bg-brand-gray w-8 h-8 rounded-lg text-lg flex justify-center items-center">
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="bg-white h-[569px] w-[446px] rounded-lg relative"
+    >
+      <button
+        onClick={handleClickClose}
+        className="absolute right-8 top-8 bg-brand-gray w-8 h-8 rounded-lg text-lg flex justify-center items-center"
+      >
         <MdClose />
       </button>
       <div>
@@ -68,7 +86,7 @@ export default function Register() {
           </div>
           <div>
             <label className="flex items-center justify-center">
-              <input className="w-[22px] h-[22px] border-2 rounded" />
+              <input type="checkbox" className="w-[22px] h-[22px]" />
               <span className="text-xs text-gray-500 px-3 ">
                 Getir’in bana özel kampanya, tanıtım ve fırsatlarından haberdar
                 olmak istiyorum.
@@ -102,7 +120,10 @@ export default function Register() {
         </div>
         <div className="h-14 bg-brand-gray rounded-b-lg flex justify-center items-center text-sm text-gray-500 mt-3">
           Getir'e üyeyseniz{" "}
-          <button className="pl-1 text-primary-brand-color font-semibold">
+          <button
+            onClick={(e) => handleClick(e)}
+            className="pl-1 text-primary-brand-color font-semibold"
+          >
             Giriş yap
           </button>
         </div>

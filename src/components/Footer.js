@@ -6,12 +6,16 @@ import { BsTwitter } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 import { BiGlobe } from "react-icons/bi";
 
-export default function Footer() {
+export default function Footer({ handleClickLaguage }) {
   const [footer, setFooter] = useState([]);
 
   useEffect(() => {
     setFooter(footerData);
   }, []);
+
+  const handleClickButton = (e) => {
+    handleClickLaguage(e);
+  };
 
   return (
     <>
@@ -101,7 +105,10 @@ export default function Footer() {
             >
               <SiInstagram className="w-5 h-5 hover:text-primary-brand-color" />
             </a>
-            <button className="flex items-center justify-center border rounded-lg p-1 hover:text-primary-brand-color hover:bg-gray-100 hover:border-none">
+            <button
+              onClick={(e) => handleClickButton(e)}
+              className="flex items-center justify-center border rounded-lg p-1 hover:text-primary-brand-color hover:bg-gray-100 hover:border-none"
+            >
               <div>
                 <BiGlobe className="w-5 h-5 mr-2" />
               </div>
